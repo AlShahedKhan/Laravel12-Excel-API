@@ -14,4 +14,9 @@ Create a Export class via
 ```
 php artisan make:export UsersExport --model=User
 ```
+create controller via 
+```
+php artisan make:controller UserController
+```
+
 
