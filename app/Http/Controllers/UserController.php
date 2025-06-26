@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Exports\UsersExport;
-use App\Imports\UsersImport;
 use App\Models\User;
+use App\Imports\UserImport;
+use App\Exports\UsersExport;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -28,7 +28,7 @@ class UserController extends Controller
             'file' => 'required|max:2048',
         ]);
 
-        Excel::import(new UsersImport, $request->file('file'));
+        Excel::import(new UserImport, $request->file('file'));
 
         return response()->json([
             'message' => 'Users imported successfully',
